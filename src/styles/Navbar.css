@@ -1,0 +1,87 @@
+/* ===== Navbar ===== */
+.navbar-custom {
+  background-color: #fff;
+  box-shadow: 0 1px 0 rgba(39, 29, 103, 0.08);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  padding: 18px 0;
+}
+
+.navbar-custom .navbar-brand span {
+  color: var(--accent-blue);
+}
+
+.navbar-custom .nav-link-custom {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 22px 16px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navbar-custom .nav-link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background-color: var(--primary-medium);
+  border-radius: 2px 2px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.navbar-custom .nav-link-custom:hover,
+.navbar-custom .nav-link-custom.active {
+  color: var(--primary-dark);
+}
+
+.navbar-custom .nav-link-custom:hover::after,
+.navbar-custom .nav-link-custom.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-custom .btn-fale {
+  background-color: var(--primary-dark);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.navbar-custom .btn-fale:hover {
+  background-color: var(--accent-blue);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-toggler-custom {
+  border: none;
+  background: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--primary-dark);
+}

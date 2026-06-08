@@ -1,0 +1,131 @@
+/* ===== Pillars Section ===== */
+.pillars-section {
+  background-color: var(--primary-dark);
+  padding: 90px 0;
+}
+
+.pillars-section .section-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pillars-section .section-title {
+  color: #fff;
+}
+
+.pillars-section .section-subtitle {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.pillar-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 32px 24px 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-medium), var(--accent-blue));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.pillar-card:hover,
+.pillar-card:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.pillar-card:hover::before,
+.pillar-card--open::before {
+  transform: scaleX(1);
+}
+
+.pillar-card--open {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.pillar-icon-wrap {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:hover .pillar-icon-wrap,
+.pillar-card--open .pillar-icon-wrap {
+  background: var(--primary-medium);
+  color: #fff;
+}
+
+.pillar-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.pillar-card > p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Expandable detail */
+.pillar-detail {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.pillar-card--open .pillar-detail {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.pillar-detail p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Chevron */
+.pillar-chevron {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.pillar-card--open .pillar-chevron {
+  transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.9);
+}

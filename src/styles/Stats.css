@@ -1,0 +1,111 @@
+/* ===== Stats Section ===== */
+.stats-section {
+  background-color: var(--primary-dark);
+  padding: 30px 0 30px;
+  position: relative;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+  outline: none;
+}
+
+.stat-item:hover,
+.stat-item:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stat-item--open {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-icon-wrap {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.stat-item--open .stat-icon-wrap {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Chevron */
+.stat-chevron {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.stat-item--open .stat-chevron {
+  transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Expandable detail */
+.stat-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.stat-item--open .stat-detail {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.stat-detail p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 4px;
+}
+
+@media (max-width: 991px) {
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+}
